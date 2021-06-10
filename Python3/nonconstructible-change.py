@@ -7,15 +7,17 @@ def nonconstructiblechange(coins):
     currentChangeCreated = 0
     for coin in coins:
         if coin > currentChangeCreated + 1:
-            print(coin,currentChangeCreated)
+            print(coin, currentChangeCreated)
             return currentChangeCreated + 1
+        print(coin, currentChangeCreated)
         currentChangeCreated += coin
-    retun currentChangeCreated + 1
+    return currentChangeCreated + 1
 
 
 
 class TestProgram(unittest.TestCase):
     def test_case_1(self):
-        input = [5, 7, 1, 1, 2, 3, 22]
-        expected = 20
+        #input = [5, 7, 1, 1, 2, 3, 22]
+        input = [1, 2, 3, 5]
+        expected = 12
         self.assertEqual(nonconstructiblechange(input), expected)
